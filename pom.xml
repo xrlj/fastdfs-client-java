@@ -15,6 +15,10 @@
     <maven.test.failure.ignore>true</maven.test.failure.ignore>
     <maven.test.skip>true</maven.test.skip>
     <jdk.version>1.6</jdk.version>
+
+    <nexus.host>nexus-server</nexus.host>
+    <nexus.port>8081</nexus.port>
+    <nexus.url>http://${nexus.host}:8081</nexus.url>
   </properties>
 
 
@@ -46,5 +50,20 @@
       </plugin>
     </plugins>
   </build>
+
+  <!--mavne 发布-->
+  <distributionManagement>
+    <repository>
+      <id>repository</id>
+      <name>maven-releases</name>
+      <url>${nexus.url}/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <!--这里id要和maven的setting.xml中配置的一致-->
+      <id>snapshots</id>
+      <name>maven-snapshots</name>
+      <url>${nexus.url}/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
