@@ -14,11 +14,11 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.test.failure.ignore>true</maven.test.failure.ignore>
     <maven.test.skip>true</maven.test.skip>
-    <jdk.version>1.6</jdk.version>
+    <jdk.version>11</jdk.version>
 
     <nexus.host>nexus-server</nexus.host>
     <nexus.port>8081</nexus.port>
-    <nexus.url>http://${nexus.host}:8081</nexus.url>
+    <nexus.url>http://8.129.38.64:15671</nexus.url>
   </properties>
 
 
